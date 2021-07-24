@@ -1,0 +1,11 @@
+***REMOVED***
+  "extends": "../tsconfig.json",
+  "compilerOptions": ***REMOVED***
+    "outDir": "../out-tsc/app",
+    "types": []
+***REMOVED***
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+***REMOVED***
