@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Insurance.Models;
 namespace Insurance.Repository
 ***REMOVED***
-    public interface IRepository
+    public interface IOccupationRepository
     ***REMOVED***
-        Task<List<T>> SelectAll<T>() where T : class;
-        Task CreateAsync<T>(T entity) where T : class; 
+        List<Occupation> GetAllOccupation();
 ***REMOVED***
 ***REMOVED***
