@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AngularDemo.Controllers
+namespace Insurance.Controllers
 ***REMOVED***
     [ApiController]
     [Route("[controller]")]
