@@ -1,6 +1,8 @@
 import ***REMOVED*** Injectable ***REMOVED*** from '@angular/core';
 import ***REMOVED*** Users ***REMOVED*** from './users.model';
+import ***REMOVED*** Occupation ***REMOVED*** from './occupation.model';
 import ***REMOVED*** HttpClient ***REMOVED*** from "@angular/common/http";
+import ***REMOVED*** Observable ***REMOVED*** from 'rxjs';
 
 @Injectable(***REMOVED***
   providedIn: 'root'
@@ -10,8 +12,8 @@ export class UsersService ***REMOVED***
   constructor(private http: HttpClient) ***REMOVED***
     
 ***REMOVED***
-  readonly _baseUrl = "https://localhost:44393/api/User";
-  readonly _baseUrlOccupation = "https://localhost:44393/api/Occupation";
+  readonly _baseUrl = "https://localhost:44356/api/User";
+  readonly _baseUrlOccupation = "https://localhost:44356/api/Occupation";
 
   formData: Users = new Users();
   list: Users[];
@@ -23,8 +25,8 @@ export class UsersService ***REMOVED***
   putMember() ***REMOVED***
     return this.http.put(`$***REMOVED***this._baseUrl***REMOVED***/$***REMOVED***this.formData.id***REMOVED***` ,this.formData);
 ***REMOVED***
-  getOccupation() ***REMOVED***
-    return this.http.get(`$***REMOVED***this._baseUrlOccupation***REMOVED***`);
+  getOccupation(): Observable<Occupation[]> ***REMOVED***
+    return this.http.get<Occupation[]>(this._baseUrlOccupation);
 ***REMOVED***
 
   refreshList() ***REMOVED***

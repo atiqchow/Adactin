@@ -6,6 +6,10 @@ import ***REMOVED*** MatDatepickerInputEvent ***REMOVED*** from '@angular/materi
  import * as _moment from 'moment';
 import ***REMOVED*** Moment ***REMOVED*** from 'moment';
 import * as moment from 'moment';
+import ***REMOVED*** BehaviorSubject ***REMOVED*** from 'rxjs';
+import ***REMOVED*** Occupation ***REMOVED*** from '../../shared/occupation.model';
+ 
+ 
 @Component(***REMOVED***
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
@@ -13,13 +17,21 @@ import * as moment from 'moment';
   ]
 ***REMOVED***)
 export class UserFormComponent implements OnInit ***REMOVED***
-
-  age:number;
+  occupationValue: number;
+  age: number;
+  premium: number;
+  firstname: string;
+  showResult: boolean;
+  occupations: Occupation[] = [];
   constructor(public service: UsersService) ***REMOVED***
      
 ***REMOVED***
 
-  ngOnInit(): void ***REMOVED***
+  ngOnInit(): void ***REMOVED***  
+
+    this.service.getOccupation().subscribe(res => ***REMOVED***
+      this.occupations = res;
+***REMOVED***);
 ***REMOVED***
 
   handleDOBChange(event) ***REMOVED***
@@ -29,15 +41,19 @@ export class UserFormComponent implements OnInit ***REMOVED***
 
     this.age = moment().diff(userDOB, 'years')
 
-    console.log(this.age)
+    
 ***REMOVED***
-  onSubmit(form: NgForm) ***REMOVED***
-    if(this.service.formData.id == 0) //we will use the id as identifier for updating or insertion
-    this.insertRecord(form);
-    else
-    this.updateRecord(form);
+  onSubmit(form: NgForm) ***REMOVED***    
+    const deathInsured = form.value.deathInsured;
+    if (deathInsured > 0 && this.occupationValue > 0 && this.age > 0) ***REMOVED***
+      this.premium = (deathInsured * this.occupationValue * this.age) / 1000 * 12
+      this.showResult = true;
 ***REMOVED***
-
+***REMOVED***
+  setFactor(filterVal: any) ***REMOVED***
+   
+    this.occupationValue = filterVal;
+***REMOVED***
   insertRecord(form:NgForm) ***REMOVED***
     this.service.postMember().subscribe(
       res => ***REMOVED***
@@ -61,9 +77,9 @@ export class UserFormComponent implements OnInit ***REMOVED***
   ***REMOVED***
     );
 ***REMOVED***
-
   resetForm(form: NgForm) ***REMOVED***
-    form.form.reset();
-    this.service.formData = new Users();
+    form.setValue(***REMOVED*** firstName: '', lastName: '', deathInsured: '' ***REMOVED***);
+    this.showResult = false;
 ***REMOVED***
+  
 ***REMOVED***
