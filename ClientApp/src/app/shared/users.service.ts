@@ -11,6 +11,7 @@ export class UsersService {
     
   }
   readonly _baseUrl = "https://localhost:44393/api/User";
+  readonly _baseUrlOccupation = "https://localhost:44393/api/Occupation";
 
   formData: Users = new Users();
   list: Users[];
@@ -22,7 +23,9 @@ export class UsersService {
   putMember() {
     return this.http.put(`${this._baseUrl}/${this.formData.id}` ,this.formData);
   }
- 
+  getOccupation() {
+    return this.http.get(`${this._baseUrlOccupation}`);
+  }
 
   refreshList() {
     this.http.get(this._baseUrl)
