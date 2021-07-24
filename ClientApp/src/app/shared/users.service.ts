@@ -11,6 +11,7 @@ export class UsersService ***REMOVED***
     
 ***REMOVED***
   readonly _baseUrl = "https://localhost:44393/api/User";
+  readonly _baseUrlOccupation = "https://localhost:44393/api/Occupation";
 
   formData: Users = new Users();
   list: Users[];
@@ -22,7 +23,9 @@ export class UsersService ***REMOVED***
   putMember() ***REMOVED***
     return this.http.put(`$***REMOVED***this._baseUrl***REMOVED***/$***REMOVED***this.formData.id***REMOVED***` ,this.formData);
 ***REMOVED***
- 
+  getOccupation() ***REMOVED***
+    return this.http.get(`$***REMOVED***this._baseUrlOccupation***REMOVED***`);
+***REMOVED***
 
   refreshList() ***REMOVED***
     this.http.get(this._baseUrl)
