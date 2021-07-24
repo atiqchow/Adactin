@@ -22,6 +22,7 @@ export class UserFormComponent implements OnInit ***REMOVED***
   premium: number;
   firstname: string;
   showResult: boolean;
+  currentoccupationFactor = '0';
   occupations: Occupation[] = [];
   constructor(public service: UsersService) ***REMOVED***
      
@@ -78,7 +79,10 @@ export class UserFormComponent implements OnInit ***REMOVED***
     );
 ***REMOVED***
   resetForm(form: NgForm) ***REMOVED***
-    form.setValue(***REMOVED*** firstName: '', lastName: '', deathInsured: '' ***REMOVED***);
+    
+    form.setValue(***REMOVED***
+      firstName: '', lastName: '', deathInsured: '', occupation:'0'
+  ***REMOVED***);
     this.showResult = false;
 ***REMOVED***
   
