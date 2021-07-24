@@ -1,32 +1,32 @@
-import ***REMOVED*** BrowserModule ***REMOVED*** from '@angular/platform-browser';
 import ***REMOVED*** NgModule ***REMOVED*** from '@angular/core';
+import ***REMOVED*** BrowserModule ***REMOVED*** from '@angular/platform-browser'; 
+import ***REMOVED*** AppRoutingModule ***REMOVED*** from './app-routing.module';
+import ***REMOVED*** AppComponent ***REMOVED*** from './app.component';
+import ***REMOVED*** UsersComponent ***REMOVED*** from './users/users.component';
+import ***REMOVED*** UserFormComponent ***REMOVED*** from './users/user-form/user-form.component';
 import ***REMOVED*** FormsModule ***REMOVED*** from '@angular/forms';
 import ***REMOVED*** HttpClientModule ***REMOVED*** from '@angular/common/http';
-import ***REMOVED*** RouterModule ***REMOVED*** from '@angular/router';
-
-import ***REMOVED*** AppComponent ***REMOVED*** from './app.component';
-import ***REMOVED*** NavMenuComponent ***REMOVED*** from './nav-menu/nav-menu.component';
-import ***REMOVED*** HomeComponent ***REMOVED*** from './home/home.component';
-import ***REMOVED*** CounterComponent ***REMOVED*** from './counter/counter.component';
-import ***REMOVED*** FetchDataComponent ***REMOVED*** from './fetch-data/fetch-data.component';
+import ***REMOVED*** BrowserAnimationsModule ***REMOVED*** from '@angular/platform-browser/animations';
+import ***REMOVED***
+  MatDatepickerModule, MatNativeDateModule, MatFormFieldModule
+***REMOVED*** from '@angular/material';
 
 @NgModule(***REMOVED***
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    UsersComponent,
+    UserFormComponent
+    
   ],
   imports: [
-    BrowserModule.withServerTransition(***REMOVED*** appId: 'ng-cli-universal' ***REMOVED***),
-    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot([
-      ***REMOVED*** path: '', component: HomeComponent, pathMatch: 'full' ***REMOVED***,
-      ***REMOVED*** path: 'counter', component: CounterComponent ***REMOVED***,
-      ***REMOVED*** path: 'fetch-data', component: FetchDataComponent ***REMOVED***,
-    ])
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
