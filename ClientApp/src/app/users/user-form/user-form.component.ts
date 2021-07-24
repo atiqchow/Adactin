@@ -22,6 +22,7 @@ export class UserFormComponent implements OnInit {
   premium: number;
   firstname: string;
   showResult: boolean;
+  currentoccupationFactor = '0';
   occupations: Occupation[] = [];
   constructor(public service: UsersService) {
      
@@ -78,7 +79,10 @@ export class UserFormComponent implements OnInit {
     );
   }
   resetForm(form: NgForm) {
-    form.setValue({ firstName: '', lastName: '', deathInsured: '' });
+    
+    form.setValue({
+      firstName: '', lastName: '', deathInsured: '', occupation:'0'
+      });
     this.showResult = false;
   }
   

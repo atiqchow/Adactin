@@ -10,7 +10,7 @@
     <div class="form-group col-md-3">
       <label>Last Name</label>
       <input class="form-control form-control-lg" placeholder="Last Name"
-             name="lastName" #firstname="ngModel" [(ngModel)]="service.formData.lastName" required />
+             name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName" required />
     </div>
   </div>
   <div class="form-row">
@@ -25,7 +25,7 @@
     <div class="form-group col-md-5">
       <label>Occupation</label>
 
-      <select class="form-control form-control-lg" (change)="setFactor($event.target.value)" name="occupation">
+      <select class="form-control form-control-lg" (change)="setFactor($event.target.value)" name="occupation"  [(ngModel)]="currentoccupationFactor">
         <option value="0">--Select Occupation--</option>
         <option *ngFor="let occ of occupations" value={{occ.factor}}>
           {{occ.name}}
@@ -36,7 +36,7 @@
     <div class="form-group col-md-3">
       <label>Death - Sum Insured</label>
       <input class="form-control form-control-lg" placeholder=""
-             name="deathInsured" #firstname="ngModel" [(ngModel)]="service.formData.deathInsured" required type="number" />
+             name="deathInsured" #deathInsured="ngModel" [(ngModel)]="service.formData.deathInsured" required type="number" />
     </div>
   </div>
   <div class="form-row">
@@ -50,6 +50,6 @@
     </div>
   </div>
   <div class="form-row">
-    <div  *ngIf="showResult"><h2>{{premium}}</h2></div>
+    <div  *ngIf="showResult"><h2>{{premium| number : '1.2-2'}}</h2></div>
     </div>
 </form>
