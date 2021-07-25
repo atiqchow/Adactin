@@ -16,10 +16,10 @@
   <div class="form-row">
     <div class="form-group col-md-4">
       <label>Date of Birth</label><span class="mandatory">*</span>
-
-      <input type="date"  min="1900-02-06" max="2100-03-05"  class="form-control form-control-lg" matInput [matDatepicker]="picker" (dateChange)="handleDOBChange($event)">
+      <input type="date" matInput class="form-control form-control-lg"  [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="handleDOBChange($event)">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+     
     </div>
 
     <div class="form-group col-md-5">
