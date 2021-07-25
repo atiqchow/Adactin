@@ -5,21 +5,21 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Insurance.Repository
-***REMOVED***
+{
     public class OccupationRepository : IOccupationRepository
-    ***REMOVED***
+    {
         public List<Occupation> occupation = new List<Occupation>()
-        ***REMOVED***
-            new Occupation ***REMOVED*** Name="Cleaner", Factor=1.50***REMOVED***,
-            new Occupation ***REMOVED***Name="Doctor", Factor=1.0***REMOVED***,
-            new Occupation ***REMOVED***Name="Author", Factor=1.25***REMOVED***,
-            new Occupation ***REMOVED***Name="Farmer", Factor=1.75***REMOVED***,
-            new Occupation ***REMOVED***Name="Mechanic", Factor=1.75***REMOVED***,
-            new Occupation ***REMOVED***Name="Florist", Factor=1.50***REMOVED***
-    ***REMOVED***;
+        {
+            new Occupation { Name="Cleaner", Factor=1.50},
+            new Occupation {Name="Doctor", Factor=1.0},
+            new Occupation {Name="Author", Factor=1.25},
+            new Occupation {Name="Farmer", Factor=1.75},
+            new Occupation {Name="Mechanic", Factor=1.75},
+            new Occupation {Name="Florist", Factor=1.50}
+        };
         public List<Occupation> GetAllOccupation()
-        ***REMOVED***
+        {
             return occupation;
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
+        }
+    }
+}

@@ -1,12 +1,12 @@
-***REMOVED***
+{
   "extends": "../tsconfig.json",
-  "compilerOptions": ***REMOVED***
+  "compilerOptions": {
     "outDir": "../out-tsc/spec",
     "types": [
       "jasmine",
       "node"
     ]
-***REMOVED***
+  },
   "files": [
     "test.ts",
     "polyfills.ts"
@@ -15,4 +15,4 @@
     "**/*.spec.ts",
     "**/*.d.ts"
   ]
-***REMOVED***
+}

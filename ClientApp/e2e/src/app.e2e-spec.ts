@@ -1,14 +1,14 @@
-import ***REMOVED*** AppPage ***REMOVED*** from './app.po';
+import { AppPage } from './app.po';
 
-describe('App', () => ***REMOVED***
+describe('App', () => {
   let page: AppPage;
 
-  beforeEach(() => ***REMOVED***
+  beforeEach(() => {
     page = new AppPage();
-***REMOVED***);
+  });
 
-  it('should display welcome message', () => ***REMOVED***
+  it('should display welcome message', () => {
     page.navigateTo();
     expect(page.getMainHeading()).toEqual('Hello, world!');
-***REMOVED***);
-***REMOVED***);
+  });
+});

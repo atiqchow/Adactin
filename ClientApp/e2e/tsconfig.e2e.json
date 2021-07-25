@@ -1,6 +1,6 @@
-***REMOVED***
+{
   "extends": "../tsconfig.json",
-  "compilerOptions": ***REMOVED***
+  "compilerOptions": {
     "outDir": "../out-tsc/app",
     "module": "commonjs",
     "target": "es5",
@@ -9,5 +9,5 @@
       "jasminewd2",
       "node"
     ]
-***REMOVED***
-***REMOVED***
+  }
+}

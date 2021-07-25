@@ -1,9 +1,9 @@
-***REMOVED***
+{
   "extends": "../tsconfig.json",
-  "compilerOptions": ***REMOVED***
+  "compilerOptions": {
     "module": "commonjs"
-***REMOVED***
-  "angularCompilerOptions": ***REMOVED***
+  },
+  "angularCompilerOptions": {
     "entryModule": "app/app.server.module#AppServerModule"
-***REMOVED***
-***REMOVED***
+  }
+}

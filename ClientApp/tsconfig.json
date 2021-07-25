@@ -1,6 +1,6 @@
-***REMOVED***
+{
   "compileOnSave": false,
-  "compilerOptions": ***REMOVED***
+  "compilerOptions": {
     "baseUrl": "./",
     "module": "esnext",
     "outDir": "./dist/out-tsc",
@@ -17,5 +17,5 @@
       "es2017",
       "dom"
     ]
-***REMOVED***
-***REMOVED***
+  }
+}

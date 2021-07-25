@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Insurance.Migrations
-***REMOVED***
+{
     [DbContext(typeof(AppDBContext))]
     [Migration("20210724014021_Users")]
     partial class Users
-    ***REMOVED***
+    {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        ***REMOVED***
+        {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
@@ -22,7 +22,7 @@ namespace Insurance.Migrations
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Insurance.Models.User", b =>
-                ***REMOVED***
+                {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
@@ -49,8 +49,8 @@ namespace Insurance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("users");
-            ***REMOVED***);
+                });
 #pragma warning restore 612, 618
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
+        }
+    }
+}

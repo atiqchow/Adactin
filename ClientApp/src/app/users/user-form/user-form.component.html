@@ -16,10 +16,10 @@
   <div class="form-row">
     <div class="form-group col-md-4">
       <label>Date of Birth</label><span class="mandatory">*</span>
-
-      <input type="date"  min="1900-02-06" max="2100-03-05"  class="form-control form-control-lg" matInput [matDatepicker]="picker" (dateChange)="handleDOBChange($event)">
+      <input type="date" matInput class="form-control form-control-lg"  [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="handleDOBChange($event)">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+     
     </div>
 
     <div class="form-group col-md-5">
@@ -27,8 +27,8 @@
 
       <select class="form-control form-control-lg" (change)="setFactor($event.target.value)" name="occupation"  [(ngModel)]="currentoccupationFactor">
         <option value="0">--Select Occupation--</option>
-        <option *ngFor="let occ of occupations" value=***REMOVED******REMOVED***occ.factor***REMOVED******REMOVED***>
-          ***REMOVED******REMOVED***occ.name***REMOVED******REMOVED***
+        <option *ngFor="let occ of occupations" value={{occ.factor}}>
+          {{occ.name}}
         </option>
       </select>
     </div>
@@ -50,7 +50,7 @@
     </div>
   </div>
   <div class="form-row">
-    <div *ngIf="showResult"><h2>Your premium is $***REMOVED******REMOVED***premium| number : '1.2-2'***REMOVED******REMOVED***</h2></div>
+    <div *ngIf="showResult"><h2>Your premium is ${{premium| number : '1.2-2'}}</h2></div>
     <div *ngIf="showError"><span class="mandatory">Fields marked with * are mandatory</span></div>
   </div>
 </form>

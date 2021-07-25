@@ -1,21 +1,21 @@
 import 'hammerjs';
-import ***REMOVED*** enableProdMode ***REMOVED*** from '@angular/core';
-import ***REMOVED*** platformBrowserDynamic ***REMOVED*** from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import ***REMOVED*** AppModule ***REMOVED*** from './app/app.module';
-import ***REMOVED*** environment ***REMOVED*** from './environments/environment';
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-export function getBaseUrl() ***REMOVED***
+export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
-***REMOVED***
+}
 
 const providers = [
-  ***REMOVED*** provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] ***REMOVED***
+  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
 ];
 
-if (environment.production) ***REMOVED***
+if (environment.production) {
   enableProdMode();
-***REMOVED***
+}
 
 platformBrowserDynamic(providers).bootstrapModule(AppModule)
   .catch(err => console.log(err));

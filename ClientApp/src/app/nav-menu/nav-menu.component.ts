@@ -1,18 +1,18 @@
-import ***REMOVED*** Component ***REMOVED*** from '@angular/core';
+import { Component } from '@angular/core';
 
-@Component(***REMOVED***
+@Component({
   selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.css']
-***REMOVED***)
-export class NavMenuComponent ***REMOVED***
+})
+export class NavMenuComponent {
   isExpanded = false;
 
-  collapse() ***REMOVED***
+  collapse() {
     this.isExpanded = false;
-***REMOVED***
+  }
 
-  toggle() ***REMOVED***
+  toggle() {
     this.isExpanded = !this.isExpanded;
-***REMOVED***
-***REMOVED***
+  }
+}

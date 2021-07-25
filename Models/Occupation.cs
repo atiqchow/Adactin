@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Insurance.Models
-***REMOVED***
+{
     public class Occupation
-    ***REMOVED***
+    {
       
-        public string Name ***REMOVED*** get; set; ***REMOVED***
-        public double Factor ***REMOVED*** get; set; ***REMOVED***
-***REMOVED***
-***REMOVED***
+        public string Name { get; set; }
+        public double Factor { get; set; }
+    }
+}

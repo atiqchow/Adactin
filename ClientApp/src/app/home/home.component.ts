@@ -1,8 +1,8 @@
-import ***REMOVED*** Component ***REMOVED*** from '@angular/core';
+import { Component } from '@angular/core';
 
-@Component(***REMOVED***
+@Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-***REMOVED***)
-export class HomeComponent ***REMOVED***
-***REMOVED***
+})
+export class HomeComponent {
+}

@@ -1,35 +1,35 @@
-import ***REMOVED*** TestBed ***REMOVED*** from '@angular/core/testing';
-import ***REMOVED*** RouterTestingModule ***REMOVED*** from '@angular/router/testing';
-import ***REMOVED*** AppComponent ***REMOVED*** from './app.component';
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from './app.component';
 
-describe('AppComponent', () => ***REMOVED***
-  beforeEach(async () => ***REMOVED***
-    await TestBed.configureTestingModule(***REMOVED***
+describe('AppComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
       declarations: [
         AppComponent
       ],
-***REMOVED***).compileComponents();
-***REMOVED***);
+    }).compileComponents();
+  });
 
-  it('should create the app', () => ***REMOVED***
+  it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-***REMOVED***);
+  });
 
-  it(`should have as title 'ClientApp'`, () => ***REMOVED***
+  it(`should have as title 'ClientApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('ClientApp');
-***REMOVED***);
+  });
 
-  it('should render title', () => ***REMOVED***
+  it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('ClientApp app is running!');
-***REMOVED***);
-***REMOVED***);
+  });
+});

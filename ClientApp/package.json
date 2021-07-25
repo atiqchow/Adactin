@@ -1,7 +1,7 @@
-***REMOVED***
+{
   "name": "insurance",
   "version": "0.0.0",
-  "scripts": ***REMOVED***
+  "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -9,9 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-***REMOVED***
+  },
   "private": true,
-  "dependencies": ***REMOVED***
+  "dependencies": {
     "@angular/animations": "8.2.12",
     "@angular/cdk": "~8.2.3",
     "@angular/common": "8.2.12",
@@ -37,8 +37,8 @@
     "ts-node": "~8.4.1",
     "tslint": "~5.20.0",
     "zone.js": "0.9.1"
-***REMOVED***
-  "devDependencies": ***REMOVED***
+  },
+  "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.29",
     "@angular/cli": "^8.3.29",
     "@angular/compiler-cli": "^8.2.14",
@@ -56,11 +56,11 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.5.4",
     "typescript": "3.5.3"
-***REMOVED***
-  "optionalDependencies": ***REMOVED***
+  },
+  "optionalDependencies": {
     "node-sass": "^5.0.0",
     "protractor": "~5.4.2",
     "ts-node": "~8.4.1",
     "tslint": "~5.20.0"
-***REMOVED***
-***REMOVED***
+  }
+}

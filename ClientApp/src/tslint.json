@@ -1,6 +1,6 @@
-***REMOVED***
+{
     "extends": "../tslint.json",
-    "rules": ***REMOVED***
+    "rules": {
         "directive-selector": [
             true,
             "attribute",
@@ -13,5 +13,5 @@
             "app",
             "kebab-case"
         ]
-***REMOVED***
-***REMOVED***
+    }
+}

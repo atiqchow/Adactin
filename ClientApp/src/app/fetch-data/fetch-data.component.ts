@@ -1,23 +1,23 @@
-import ***REMOVED*** Component, Inject ***REMOVED*** from '@angular/core';
-import ***REMOVED*** HttpClient ***REMOVED*** from '@angular/common/http';
+import { Component, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-@Component(***REMOVED***
+@Component({
   selector: 'app-fetch-data',
   templateUrl: './fetch-data.component.html'
-***REMOVED***)
-export class FetchDataComponent ***REMOVED***
+})
+export class FetchDataComponent {
   public forecasts: WeatherForecast[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) ***REMOVED***
-    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => ***REMOVED***
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
       this.forecasts = result;
-***REMOVED***, error => console.error(error));
-***REMOVED***
-***REMOVED***
+    }, error => console.error(error));
+  }
+}
 
-interface WeatherForecast ***REMOVED***
+interface WeatherForecast {
   date: string;
   temperatureC: number;
   temperatureF: number;
   summary: string;
-***REMOVED***
+}
