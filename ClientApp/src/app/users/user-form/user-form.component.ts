@@ -23,16 +23,19 @@ export class UserFormComponent implements OnInit {
   firstname: string;
   showResult: boolean;
   currentoccupationFactor = '0';
+  BirthDate: Date;
   occupations: Occupation[] = [];
+  showError: boolean;
   constructor(public service: UsersService) {
      
   }
 
-  ngOnInit(): void {  
-
+  ngOnInit(): void {
+    this.BirthDate = new Date();
     this.service.getOccupation().subscribe(res => {
       this.occupations = res;
     });
+
   }
 
   handleDOBChange(event) {
@@ -44,44 +47,23 @@ export class UserFormComponent implements OnInit {
 
     
   }
-  onSubmit(form: NgForm) {    
+  onSubmit(form: NgForm) {
+    
+    this.showError = form.invalid;     
     const deathInsured = form.value.deathInsured;
     if (deathInsured > 0 && this.occupationValue > 0 && this.age > 0) {
       this.premium = (deathInsured * this.occupationValue * this.age) / 1000 * 12
       this.showResult = true;
     }
   }
-  setFactor(filterVal: any) {
-   
+  setFactor(filterVal: any) {   
     this.occupationValue = filterVal;
   }
-  insertRecord(form:NgForm) {
-    this.service.postMember().subscribe(
-      res => {
-        this.resetForm(form);
-        this.service.refreshList();
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
-  updateRecord(form: NgForm) {
-    this.service.putMember().subscribe(
-      res => {
-        this.resetForm(form);
-        this.service.refreshList();
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  
   resetForm(form: NgForm) {
     
     form.setValue({
-      firstName: '', lastName: '', deathInsured: '', occupation:'0'
+      firstName: '', lastName: '', deathInsured: '0', occupation:'0'
       });
     this.showResult = false;
   }

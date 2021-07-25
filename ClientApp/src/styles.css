@@ -77,3 +77,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+.mandatory{
+    color:red;
+    padding:2px;
+}
