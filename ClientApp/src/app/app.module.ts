@@ -1,43 +1,43 @@
-import ***REMOVED*** NgModule ***REMOVED*** from '@angular/core';
-import ***REMOVED*** BrowserModule ***REMOVED*** from '@angular/platform-browser'; 
-import ***REMOVED*** AppRoutingModule ***REMOVED*** from './app-routing.module';
-import ***REMOVED*** AppComponent ***REMOVED*** from './app.component';
-import ***REMOVED*** UsersComponent ***REMOVED*** from './users/users.component';
-import ***REMOVED*** UserFormComponent ***REMOVED*** from './users/user-form/user-form.component';
-import ***REMOVED*** FormsModule ***REMOVED*** from '@angular/forms';
-import ***REMOVED*** HttpClientModule ***REMOVED*** from '@angular/common/http';
-import ***REMOVED*** BrowserAnimationsModule ***REMOVED*** from '@angular/platform-browser/animations';
-import ***REMOVED***
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'; 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { UsersComponent } from './users/users.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
   MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter, MatDateFormats
-***REMOVED*** from '@angular/material';
+} from '@angular/material';
 
-const MY_DATE_FORMATS = ***REMOVED***
-  parse: ***REMOVED***
-    dateInput: ***REMOVED*** day: 'numeric', month: 'numeric', year: 'numeric' ***REMOVED***
-***REMOVED***
-  display: ***REMOVED***
+const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: { day: 'numeric', month: 'numeric', year: 'numeric' }
+  },
+  display: {
     dateInput: 'input',
-    monthYearLabel: ***REMOVED*** year: 'numeric', month: 'short' ***REMOVED***,
-    dateA11yLabel: ***REMOVED*** year: 'numeric', month: 'long', day: 'numeric' ***REMOVED***,
-    monthYearA11yLabel: ***REMOVED*** year: 'numeric', month: 'long' ***REMOVED***,
-***REMOVED***
-***REMOVED***;
+    monthYearLabel: { year: 'numeric', month: 'short' },
+    dateA11yLabel: { year: 'numeric', month: 'long', day: 'numeric' },
+    monthYearA11yLabel: { year: 'numeric', month: 'long' },
+  }
+};
 
-export class AppDateAdapter extends NativeDateAdapter ***REMOVED***
+export class AppDateAdapter extends NativeDateAdapter {
 
-  format(date: Date, displayFormat: Object): string ***REMOVED***
-    if (displayFormat === 'input') ***REMOVED***
+  format(date: Date, displayFormat: Object): string {
+    if (displayFormat === 'input') {
       const day = date.getDate();
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
-      return `$***REMOVED***day***REMOVED***/$***REMOVED***month***REMOVED***/$***REMOVED***year***REMOVED***`;
-***REMOVED*** else ***REMOVED***
+      return `${day}/${month}/${year}`;
+    } else {
       return date.toDateString();
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
-@NgModule(***REMOVED***
+@NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
@@ -54,8 +54,8 @@ export class AppDateAdapter extends NativeDateAdapter ***REMOVED***
     MatNativeDateModule,
     MatFormFieldModule
   ],
-  providers: [***REMOVED*** provide: DateAdapter, useClass: AppDateAdapter ***REMOVED***,
-    ***REMOVED*** provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS ***REMOVED***],
+  providers: [{ provide: DateAdapter, useClass: AppDateAdapter },
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
   bootstrap: [AppComponent]
-***REMOVED***)
-export class AppModule ***REMOVED*** ***REMOVED***
+})
+export class AppModule { }

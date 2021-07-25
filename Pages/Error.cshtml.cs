@@ -8,24 +8,24 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Insurance.Pages
-***REMOVED***
+{
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel
-    ***REMOVED***
+    {
         private readonly ILogger<ErrorModel> _logger;
 
         public ErrorModel(ILogger<ErrorModel> logger)
-        ***REMOVED***
+        {
             _logger = logger;
-    ***REMOVED***
+        }
 
-        public string RequestId ***REMOVED*** get; set; ***REMOVED***
+        public string RequestId { get; set; }
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
         public void OnGet()
-        ***REMOVED***
+        {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
+        }
+    }
+}

@@ -1,39 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
-a ***REMOVED***
+a {
   color: #0366d6;
-***REMOVED***
+}
 
-code ***REMOVED***
+code {
   color: #e01a76;
-***REMOVED***
+}
 
-.btn-primary ***REMOVED***
+.btn-primary {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
-***REMOVED***
+}
 
-html, body ***REMOVED*** height: 100%; ***REMOVED***
-body ***REMOVED*** margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; ***REMOVED***
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* The container must be positioned relative: */
-.custom-select ***REMOVED***
+.custom-select {
   position: relative;
   font-family: Arial;
-***REMOVED***
+}
 
-  .custom-select select ***REMOVED***
+  .custom-select select {
     display: none; /*hide original SELECT element: */
-***REMOVED***
+  }
 
-.select-selected ***REMOVED***
+.select-selected {
   background-color: DodgerBlue;
-***REMOVED***
+}
 
   /* Style the arrow inside the select element: */
-  .select-selected:after ***REMOVED***
+  .select-selected:after {
     position: absolute;
     content: "";
     top: 14px;
@@ -42,42 +42,42 @@ body ***REMOVED*** margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     height: 0;
     border: 6px solid transparent;
     border-color: #fff transparent transparent transparent;
-***REMOVED***
+  }
 
   /* Point the arrow upwards when the select box is open (active): */
-  .select-selected.select-arrow-active:after ***REMOVED***
+  .select-selected.select-arrow-active:after {
     border-color: transparent transparent #fff transparent;
     top: 7px;
-***REMOVED***
+  }
 
 /* style the items (options), including the selected item: */
-.select-items div, .select-selected ***REMOVED***
+.select-items div, .select-selected {
   color: #ffffff;
   padding: 8px 16px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
-***REMOVED***
+}
 
 /* Style items (options): */
-.select-items ***REMOVED***
+.select-items {
   position: absolute;
   background-color: DodgerBlue;
   top: 100%;
   left: 0;
   right: 0;
   z-index: 99;
-***REMOVED***
+}
 
 /* Hide the items when the select box is closed: */
-.select-hide ***REMOVED***
+.select-hide {
   display: none;
-***REMOVED***
+}
 
-.select-items div:hover, .same-as-selected ***REMOVED***
+.select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
-***REMOVED***
-.mandatory***REMOVED***
+}
+.mandatory{
     color:red;
     padding:2px;
-***REMOVED***
+}

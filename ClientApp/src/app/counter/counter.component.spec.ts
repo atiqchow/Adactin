@@ -1,28 +1,28 @@
-import ***REMOVED*** async, ComponentFixture, TestBed ***REMOVED*** from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import ***REMOVED*** CounterComponent ***REMOVED*** from './counter.component';
+import { CounterComponent } from './counter.component';
 
-describe('CounterComponent', () => ***REMOVED***
+describe('CounterComponent', () => {
   let fixture: ComponentFixture<CounterComponent>;
 
-  beforeEach(async(() => ***REMOVED***
-    TestBed.configureTestingModule(***REMOVED***
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
       declarations: [ CounterComponent ]
-***REMOVED***)
+    })
     .compileComponents();
-***REMOVED***));
+  }));
 
-  beforeEach(() => ***REMOVED***
+  beforeEach(() => {
     fixture = TestBed.createComponent(CounterComponent);
     fixture.detectChanges();
-***REMOVED***);
+  });
 
-  it('should display a title', async(() => ***REMOVED***
+  it('should display a title', async(() => {
     const titleText = fixture.nativeElement.querySelector('h1').textContent;
     expect(titleText).toEqual('Counter');
-***REMOVED***));
+  }));
 
-  it('should start with count 0, then increments by 1 when clicked', async(() => ***REMOVED***
+  it('should start with count 0, then increments by 1 when clicked', async(() => {
     const countElement = fixture.nativeElement.querySelector('strong');
     expect(countElement.textContent).toEqual('0');
 
@@ -30,5 +30,5 @@ describe('CounterComponent', () => ***REMOVED***
     incrementButton.click();
     fixture.detectChanges();
     expect(countElement.textContent).toEqual('1');
-***REMOVED***));
-***REMOVED***);
+  }));
+});

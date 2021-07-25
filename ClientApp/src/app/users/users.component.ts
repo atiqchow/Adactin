@@ -1,24 +1,24 @@
-import ***REMOVED*** Component, OnInit ***REMOVED*** from '@angular/core';
-import ***REMOVED*** Users ***REMOVED*** from '../shared/users.model';
-import ***REMOVED*** UsersService ***REMOVED*** from '../shared/users.service';
+import { Component, OnInit } from '@angular/core';
+import { Users } from '../shared/users.model';
+import { UsersService } from '../shared/users.service';
 
-@Component(***REMOVED***
+@Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styles: [
   ]
-***REMOVED***)
-export class UsersComponent implements OnInit ***REMOVED***
+})
+export class UsersComponent implements OnInit {
 
-  constructor(public service: UsersService) ***REMOVED*** ***REMOVED***
+  constructor(public service: UsersService) { }
 
-  ngOnInit(): void ***REMOVED***
+  ngOnInit(): void {
     this.service.refreshList();
-***REMOVED***
+  }
 
-  populateForm(selectedRecord: Users) ***REMOVED***
-    this.service.formData = Object.assign(***REMOVED******REMOVED***,selectedRecord);
-***REMOVED***
+  populateForm(selectedRecord: Users) {
+    this.service.formData = Object.assign({},selectedRecord);
+  }
 
   
-***REMOVED***
+}

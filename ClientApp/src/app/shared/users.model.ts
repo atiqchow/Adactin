@@ -1,4 +1,4 @@
-export class Users ***REMOVED***
+export class Users {
   id: number;
   firstName: string;
   lastName: string;
@@ -8,7 +8,7 @@ export class Users ***REMOVED***
   age: number;
 
 
-  constructor() ***REMOVED***
+  constructor() {
     this.id = 0;
     this.firstName = "";
     this.lastName = "";
@@ -16,6 +16,6 @@ export class Users ***REMOVED***
     this.occupation = "";
     this.deathInsured = 0;
     this.age = 0;
-***REMOVED***
+  }
 
-***REMOVED***
+}

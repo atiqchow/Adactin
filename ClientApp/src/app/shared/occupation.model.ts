@@ -1,15 +1,15 @@
-export class Occupation ***REMOVED***
+export class Occupation {
   
   name: string;
   factor: number;
   
 
 
-  constructor() ***REMOVED***
+  constructor() {
     
     this.name = "";
     this.factor = 0;
    
-***REMOVED***
+  }
 
-***REMOVED***
+}
