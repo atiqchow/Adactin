@@ -22,16 +22,16 @@ export class UserFormComponent implements OnInit {
   premium: number;
   firstname: string;
   showResult: boolean;
-  currentoccupationFactor = '0';
-  BirthDate: Date;
+  currentoccupationFactor = '0'; 
   occupations: Occupation[] = [];
   showError: boolean;
+  deathInsured: number;
   constructor(public service: UsersService) {
      
   }
 
   ngOnInit(): void {
-    this.BirthDate = new Date();
+    
     this.service.getOccupation().subscribe(res => {
       this.occupations = res;
     });
@@ -39,25 +39,32 @@ export class UserFormComponent implements OnInit {
   }
 
   handleDOBChange(event) {
-    const m: Moment = event.value;
-    
-    const userDOB = moment('1989/11/17', 'YYYY/M/D');
-
-    this.age = moment().diff(userDOB, 'years')
-
-    
+    const m: Moment = event.value;     
+    var dobYear = moment(m).format('yyyy-MM-DD').substring(0, 4);      
+    var currentYear = new Date().getFullYear();   
+    this.age = (currentYear - parseInt(dobYear));    
   }
+
   onSubmit(form: NgForm) {
     
     this.showError = form.invalid;     
     const deathInsured = form.value.deathInsured;
-    if (deathInsured > 0 && this.occupationValue > 0 && this.age > 0) {
-      this.premium = (deathInsured * this.occupationValue * this.age) / 1000 * 12
-      this.showResult = true;
+    this.deathInsured = deathInsured;     
+    this.calculatePremium();
+    
+  }
+
+  calculatePremium() {
+    this.showResult = (this.deathInsured > 0 && this.occupationValue > 0 && this.age > 0)
+
+    if (this.showResult) {
+      this.premium = (this.deathInsured * this.occupationValue * this.age) / 1000 * 12
+      this.showError = !this.showResult;
     }
   }
   setFactor(filterVal: any) {   
     this.occupationValue = filterVal;
+    this.calculatePremium();
   }
   
   resetForm(form: NgForm) {
